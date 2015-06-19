@@ -1,6 +1,6 @@
 # Subsub.js
 
-Subsub allows you to create mutlple callbacks for a single channel.
+Subsub allows you to create multiple callbacks for a single channel.
 
 # Usage
 
