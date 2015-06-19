@@ -8,6 +8,8 @@ Subsub is a module that allows you to subscribe to the same pubnub channel multi
 subsub.subscribe(pubnub, channel, connect, callback);
 ```
 
+Option | Explanation
+------------------
 pubnub | Your PubNub javascript object.
 channel | The string of the PubNub channel to subscribe to
 connect | Optional callback to call when PubNub connects
