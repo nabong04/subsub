@@ -1,0 +1,46 @@
+<html>
+   <body>
+      <h1>PubNub Multiple Subscribe Callbacks</h1>
+      <p>View source to see a subsub example.</p>
+      <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.0.10.js"></script>
+      <script type="text/javascript">
+
+        var pubnub = new PubNub({                          
+          publishKey: 'demo',
+          subscribeKey: 'demo'
+        });
+
+        pubnub.addListener({
+            message: function(m) {
+              console.log('listener 1', m);
+            }
+        });
+
+        pubnub.addListener({
+            message: function(m) {
+              console.log('listener 2', m);
+            }
+        });
+
+        pubnub.addListener({
+            message: function(m) {
+              console.log('listener 3', m);
+            }
+        });
+
+        pubnub.subscribe({ 
+            channels: ['subsub_chan'] 
+        });
+
+        setInterval(function(){
+          
+          pubnub.publish({
+            channel: 'subsub_chan',
+            message: 'hello world'
+          });
+
+        }, 1000);
+
+      </script>
+   </body>
+</html>
